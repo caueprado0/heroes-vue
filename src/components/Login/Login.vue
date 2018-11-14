@@ -12,7 +12,7 @@
                   <b-input-group class="mb-3">
                     <b-input-group-prepend>
                       <b-input-group-text>
-                        <i class="icon-user"></i>
+                        <i class="fa fa-user"></i>
                       </b-input-group-text>
                     </b-input-group-prepend>
                     <b-form-input
@@ -25,7 +25,7 @@
                   <b-input-group class="mb-4">
                     <b-input-group-prepend>
                       <b-input-group-text>
-                        <i class="icon-lock"></i>
+                        <i class="fa fa-lock"></i>
                       </b-input-group-text>
                     </b-input-group-prepend>
                     <b-form-input
