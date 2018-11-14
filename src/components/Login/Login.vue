@@ -50,7 +50,10 @@
               <b-card-body class="text-center">
                 <div>
                   <h2 class="mb-5">Cadastra-se</h2>
-                  <b-button id="cadastrar" variant="primary" class="active mt-5">Se cadastrar agora!</b-button>
+                  <b-button id="cadastrar" variant="primary" class="active mt-5">
+                    Se cadastrar agora!
+                    <i class="fa fa-thumbs-up"></i>
+                  </b-button>
                 </div>
               </b-card-body>
             </b-card>
