@@ -3,10 +3,10 @@
     "es6": true,
     "browser": true
   },
-  "extends": ["airbnb-base", "prettier"],
+  "extends": ["airbnb-base", "prettier", "plugin:vue/essential"],
   "plugins": [
     "prettier",
-    "vue/essential"
+    "html"
   ],
   "parserOptions": {
     "sourceType": "module",
