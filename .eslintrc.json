@@ -3,7 +3,11 @@
     "es6": true,
     "browser": true
   },
-  "extends": ["airbnb-base", "prettier", "plugin:vue/essential"],
+  "extends": [
+    "airbnb-base",
+    "prettier",
+    "plugin:vue/essential"
+  ],
   "plugins": [
     "prettier",
     "html"
