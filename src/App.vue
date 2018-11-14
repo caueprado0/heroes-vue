@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div id="main">
     <TopNavBar></TopNavBar>
-    <router-view></router-view>
+    <b-container>
+      <router-view></router-view>
+    </b-container>
   </div>
 </template>
 
@@ -16,6 +18,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+#main {
+  height: 100vh;
+}
+.container {
+  min-height: 100%;
+  height: 100%;
+}
 </style>
