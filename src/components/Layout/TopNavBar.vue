@@ -1,15 +1,14 @@
 <template>
-  <b-navbar toggleable="md" type="dark" variant="dark">
-  <b-navbar-brand href="">Heroes VUE</b-navbar-brand>
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-  <b-collapse is-nav id="nav_collapse">
-    <!-- Right aligned nav items -->
-    <b-navbar-nav class="ml-auto">
-      <b-nav-item href="#">Login</b-nav-item>
-    </b-navbar-nav>
-  </b-collapse>
-</b-navbar>
+  <b-navbar id="navbar" toggleable="md" type="dark">
+    <b-navbar-brand href="">Heroes VUE</b-navbar-brand>
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-collapse is-nav id="nav_collapse">
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item href="#">Login</b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <script>
@@ -20,6 +19,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+#navbar {
+  background-color: #007bff;
+  color: #ffffff;
+}
 </style>
