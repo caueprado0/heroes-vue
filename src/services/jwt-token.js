@@ -34,6 +34,15 @@ export default {
       })
   },
 
+  logout() {
+    return new Promise((resolve) => {
+      resolve(() => {
+        SessionStorage.remove('token')
+        this.token = null
+      })
+    })
+  },
+
   getAuthorizationHeader() {
     return `${this.tokenType} ${this.token}`
   }
