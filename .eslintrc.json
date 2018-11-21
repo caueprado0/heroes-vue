@@ -18,6 +18,9 @@
   },
   "rules": {
     "semi": ["error", "never"],
+    "no-param-reassign": ["error", {
+      "props": false
+    }],
     "no-unused-expressions": "off",
     "indent": [2, 2],
     "import/no-extraneous-dependencies": 0
