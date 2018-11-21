@@ -1,27 +1,46 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import _ from 'lodash'
+import Jwt from '../services/jwt-token'
+
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    tasks: []
-  },
-  getters: {
-    sortedTasks: (state) => {
-      let sorted = state.tasks
-      return sorted.sort(function (a, b) {
-        if (a.title < b.title) return -1
-        if (a.title > b.title) return 1
-        return 0
-      })
-    }
-  },
-  mutations: {
-    addTask (state, {task}) {
-      state.tasks.push(task)
-    },
-    completeTask (state, {task}) {
-      task.completed = !task.completed
-    }
+const getters = {
+
+}
+
+const mutations = {
+  authenticated(state) {
+    state.auth.logged = true
   }
+}
+
+const state = {
+  auth: {
+    logged: !_.isNull(Jwt.token)
+  }
+}
+
+const actions = {
+  login(context, {
+    email,
+    password
+  }) {
+    return Jwt.login(email, password)
+      .then((response) => {
+        if (!_.isNull(response) && !_.isUndefined(response)) {
+          context.commit('authenticated')
+        }
+        return response
+      })
+  }
+}
+
+
+
+export default new Vuex.Store({
+  state,
+  getters,
+  mutations,
+  actions
 })
