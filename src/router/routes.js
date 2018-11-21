@@ -1,4 +1,5 @@
 import Login from '../components/Login/Login.vue'
+import Logout from '../components/Login/Logout.vue'
 import Personagens from '../components/Personagens/Index.vue'
 
 export default [{
@@ -26,7 +27,7 @@ export default [{
 {
   path: '/logout',
   name: 'Logout',
-  component: Login
+  component: Logout
 },
 {
   path: '/404',
