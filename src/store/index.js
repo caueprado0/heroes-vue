@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import _ from 'lodash'
 import Jwt from '../services/jwt-token'
 import Personagens from '../services/personagens'
+import Favoritos from '../services/favoritos'
 
 Vue.use(Vuex)
 
@@ -92,12 +93,17 @@ const actions = {
   personagensShow(context, {
     id
   }) {
-    Personagens.id(id)
+    return Personagens.id(id)
       .then((response) => {
         context.commit('personagens', response)
       })
-  }
+  },
 
+  favoritarPersonagem(context, {
+    id
+  }) {
+    return Favoritos.create(id)
+  }
 }
 
 
