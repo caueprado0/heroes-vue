@@ -34,9 +34,9 @@ export default class Personagens {
 
   static getQueryParams(queryParams) {
     if (_.isObject(queryParams) && _.size(_.keys(queryParams)) > 0) {
-      const query = '?'
+      let query = '?'
       _.forEach(queryParams, (value, key) => {
-        query.concat(`${key}=${value}&`)
+        query = query.concat(`${key}=${value}&`)
       })
       return query.slice(0, -1)
     }
