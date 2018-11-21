@@ -84,6 +84,9 @@ export default {
     login (event) {
       event.preventDefault()
       store.dispatch('login', this.user)
+        .then(() => {
+          this.$router.push({ name: 'Personagens' })
+        })
     }
   }
 }
