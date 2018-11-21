@@ -1,4 +1,5 @@
 import Login from '../components/Login/Login.vue'
+import Personagens from '../components/Personagens/Index.vue'
 
 export default [{
   path: '/',
