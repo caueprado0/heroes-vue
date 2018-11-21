@@ -14,13 +14,12 @@ export default class Favoritos {
         'Content-Type': 'application/json'
       }
     })
-      .then((response) => response.data.data)
   }
 
   static all(queryParams) {
     return axios({
       method: 'GET',
-      url: `http://localhost:8006/api/v1/personagem${this.getQueryParams(queryParams)}`,
+      url: `http://localhost:8006/api/v1/favoritos${this.getQueryParams(queryParams)}`,
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -29,19 +28,15 @@ export default class Favoritos {
       .then((response) => response.data.data)
   }
 
-  static id(id, queryParams) {
+  static delete(id) {
     return axios({
-      method: 'GET',
-      url: `http://localhost:8006/api/v1/personagem/${id}${this.getQueryParams(queryParams)}`,
+      method: 'DELETE',
+      url: `http://localhost:8006/api/v1/favoritos/${id}`,
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     })
-      .then((response) => {
-        console.log(response.data.data)
-        return response.data
-      })
   }
 
   static getQueryParams(queryParams) {
