@@ -14,7 +14,10 @@ export default [{
 {
   path: '/personagens',
   name: 'Personagens',
-  component: Login
+  component: Personagens,
+  meta: {
+    auth: true
+  }
 }, {
   path: '/favoritos',
   name: 'Favoritos',
