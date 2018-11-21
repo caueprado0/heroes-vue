@@ -6,7 +6,7 @@
           <b-card-group>
             <b-card no-body class="p-4">
               <b-card-body>
-                <b-form>
+                <b-form @submit.prevent="login">
                   <h1>Entrar</h1>
                   <p class="text-muted">Faça o login na sua conta</p>
                   <b-input-group class="mb-3">
@@ -18,8 +18,10 @@
                     <b-form-input
                       type="text"
                       class="form-control"
+                      v-model="user.email"
                       placeholder="E-mail"
-                      autocomplete="current-username"
+                      required
+                      autocomplete="autocomplete"
                     />
                   </b-input-group>
                   <b-input-group class="mb-4">
@@ -30,14 +32,15 @@
                     </b-input-group-prepend>
                     <b-form-input
                       type="password"
+                      v-model="user.password"
+                      required
                       class="form-control"
                       placeholder="Senha"
-                      autocomplete="current-password"
                     />
                   </b-input-group>
                   <b-row>
                     <b-col cols="5">
-                      <b-button variant="primary" class="px-4">Login</b-button>
+                      <b-button type="submit" variant="primary" class="px-4">Login</b-button>
                     </b-col>
                     <b-col cols="7" class="text-right">
                       <b-button variant="link" class="px-0">Esqueceu sua senha?</b-button>
@@ -65,8 +68,24 @@
 </template>
 
 <script>
+import store from '../../store'
+
 export default {
-  name: 'Login'
+  name: 'Login',
+  data () {
+    return {
+      user: {
+        email: '',
+        password: '',
+      }
+    }
+  },
+  methods: {
+    login (event) {
+      event.preventDefault()
+      store.dispatch('login', this.user)
+    }
+  }
 }
 </script>
 
