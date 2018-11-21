@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import _ from 'lodash'
 import Jwt from '../services/jwt-token'
 
+
 Vue.use(Vuex)
 
 const getters = {
@@ -12,6 +13,15 @@ const getters = {
 const mutations = {
   authenticated(state) {
     state.auth.logged = true
+  },
+  unauthenticated(state) {
+    Jwt.logout()
+      .then(() => {
+        state.auth.logged = false
+      })
+      .catch(() => {
+        state.auth.logged = false
+      })
   }
 }
 
